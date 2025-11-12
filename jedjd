@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT PORTFOLIO</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(21, 0, 139);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(0, 0, 0);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: aqua;
+            font-size: 1.4rem;
+        }
+
+        main hr {
+            border: 0;
+            background: rgb(200, 0, 255);
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 110px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .rightSection img {
+            background-color: rgb(255, 0, 68);
+            width: 60%;
+            text-align: center;
+            margin: 75px 0;
+        }
+
+        .purple {
+            color: rgb(68, 0, 255);
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        #element {
+            color: blueviolet;
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .secondSection .box {
+            background-color: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 100px;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 85px;
+            width: 150px;
+            color: white;
+            font-size: 8px;
+        }
+
+        .footer {
+            background-color: rgb(127, 197, 255);
+            height: 223px;
+            padding: 23px 122px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 233px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+        }
+
+        .resume-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Niroj Koirala</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="background.html" target="_blank">Background</a></li>
+                <li><a href="projects.html" target="_blank">Projects</a></li>
+                <li><a href="contact.html" target="_blank">Contact Me</a></li>
+
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hello! MY NAME IS <span class="purple">Niroj Koirala</span>
+                <div>I AM A</div>
+                <span id="element"></span>
+                <!-- Download Resume Button -->
+                <a href="RES.docx" class="resume-button" download>Download My Resume</a>
+            </div>
+
+            <div class="rightSection">
+                <img src="grad copy.png" alt="Graduation Image">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="secondSection">
+            <span class="text-gray">MY</span>
+            <h1>STUDY JOURNEY</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="nk copy.png" alt="Everest School Logo">
+                    <div class="vertical-title">EVEREST SCHOOL (2016)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eaque saepe, sunt voluptatem architecto vel laborum ea odit.
+                        Beatae impedit ducimus distinctio voluptatem qui.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="nk copy.png" alt="Everest College Logo">
+                    <div class="vertical-title">EVEREST COLLEGE (2018)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eaque saepe, sunt voluptatem architecto vel laborum ea odit.
+                        Beatae impedit ducimus distinctio voluptatem qui.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="nk copy.png" alt="Lagcc Logo">
+                    <div class="vertical-title">LAGCC (2023)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eaque saepe, sunt voluptatem architecto vel laborum ea odit.
+                        Beatae impedit ducimus distinctio voluptatem qui.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image-top" src="nk copy.png" alt="York College Logo">
+                    <div class="vertical-title">YORK COLLEGE (2025)</div>
+                    <div class="vertical-desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eaque saepe, sunt voluptatem architecto vel laborum ea odit.
+                        Beatae impedit ducimus distinctio voluptatem qui.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Niroj Personal Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-rights">
+            WWW.Niroj.com | All rights reserved
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['<i>COMPUTER SCIENCE MAJOR </i> ', '&amp; BUSINESS ADMINISTRATION MINOR.'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>

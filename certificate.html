@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Niroj Koirala</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN for Social Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-HHsN7YJYH6G4F8iQlwWgllufQNk8HiRmNRe+0dcB0l+4U3gOsm1O0ePj4G6ufaxDZppYvYdK6VSLX4U9vPDRkg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <style>
+        /* RESET & GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Dark-themed background with subtle animated gradient */
+            background: linear-gradient(-45deg, #1e1e2f, #353545, #1e1e2f, #353545);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            scroll-behavior: smooth; /* Smooth scrolling */
+            overflow-x: hidden;
+            transition: background 0.5s ease;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(30, 30, 47, 0.85);
+            color: #f0f0f0;
+            padding: 25px 30px; /* Increased padding for more margin */
+            z-index: 1000;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+        }
+
+        nav.scrolled {
+            background-color: rgba(30, 30, 47, 1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+            padding: 20px 30px; /* Adjust padding when scrolled */
+        }
+
+        /* Logo Styling */
+        .nav .logo {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .nav .logo img {
+            height: 40px; /* Adjust as needed */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        nav.scrolled .logo img {
+            transform: scale(1.1);
+        }
+
+        /* Navigation Links */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 40px; /* Increased margin for more space between links */
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+            position: relative;
+            display: inline-block;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 3px; /* Thicker underline for enhanced effect */
+            bottom: 0;
+            left: 50%;
+            background-color: #1ABC9C;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            left: 0;
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: #1ABC9C;
+            background-color: rgba(26, 188, 156, 0.2);
+            transform: scale(1.2); /* Increased scale on hover */
+            letter-spacing: 1px; /* Added letter-spacing for better readability */
+            text-shadow: 0 0 5px #1ABC9C; /* Added text shadow for emphasis */
+        }
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            width: 100%;
+            padding: 160px 20px 60px; /* Increased top padding to accommodate increased header padding */
+            background: transparent;
+        }
+
+        .certificationsSection {
+            max-width: 90vw;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .certificationsSection h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1ABC9C;
+            transition: color 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .certificates {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .certificate {
+            background-color: #2c2c3e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            width: 300px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .certificate:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .certificate:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .certificate:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .certificate:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .certificate:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .certificate img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .certificate:hover img {
+            transform: scale(1.1); /* More pronounced scaling */
+        }
+
+        .certificate h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1ABC9C;
+            transition: color 0.3s ease;
+        }
+
+        .certificate p {
+            font-size: 1rem;
+            color: #bbb;
+            transition: color 0.3s ease;
+        }
+
+        .certificate:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px 0px rgba(26, 188, 156, 0.7); /* Increased shadow */
+            background-color: #35354f;
+        }
+
+        /* Footer Styling */
+        footer {
+            padding: 30px 20px;
+            /* Dark-themed gradient background with subtle animation */
+            background: linear-gradient(135deg, #2c2c3e, #1e1e2f);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite, fadeInFooter 2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer Navigation Links */
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 1rem;
+            transition: color 0.4s, text-shadow 0.4s; /* Added text-shadow transition */
+            font-weight: 500;
+        }
+
+        .footer-links ul li a:hover {
+            color: #1ABC9C;
+            text-shadow: 0 0 5px #1ABC9C; /* Added text shadow for emphasis */
+        }
+
+        /* Social Media Icons */
+        .footer-social {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInSocial 2s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInSocial {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .footer-social a {
+            color: #f0f0f0;
+            font-size: 1.8rem; /* Icon size */
+            transition: color 0.4s, transform 0.4s; /* Increased transition duration */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px; /* Increased size for better visibility */
+            height: 0px;
+            border-radius: 50%;
+            background-color: #1e1e2f;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .footer-social a::after {
+            content: "Let's Connect";
+            position: absolute;
+            bottom: -30px; /* Increased distance for better visibility */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1ABC9C;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .footer-social a:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-10px); /* Increased translateY for more movement */
+        }
+
+        .footer-social a:hover {
+            color: #fff;
+            background-color: #1ABC9C;
+            transform: scale(1.2); /* More pronounced scaling */
+        }
+
+        /* Footer Rights */
+        .footer-rights {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #1ABC9C;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #backToTop:hover {
+            background-color: #fff;
+            color: #1ABC9C;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1200px) {
+            .certificates {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .certificate {
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .certificates {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .certificate {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            /* Navbar adjustments */
+            nav {
+                flex-direction: column;
+                padding: 20px 20px; /* Increased padding for better spacing */
+            }
+
+            nav .logo {
+                position: static;
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 15px 0; /* Increased margin for more space between links */
+            }
+
+            /* Container adjustments */
+            main {
+                padding: 140px 20px 40px;
+            }
+
+            .certificationsSection h2 {
+                font-size: 2rem;
+            }
+
+            .certificate {
+                width: 100%;
+            }
+
+            .footer-social {
+                gap: 15px;
+            }
+
+            .footer-social a {
+                font-size: 1.4rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            #backToTop {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <!-- Use an image for logo or text -->
+                <!-- Example with image logo: -->
+                <a href="index.html">
+                    <img src="path/to/your/logo.png" alt="Logo">
+                </a>
+                <!-- Example with text logo (uncomment if not using image): -->
+                <!-- <a href="index.html" class="logo-text">Niroj Koirala</a> -->
+            </div>
+            <!-- Navigation Links -->
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="background.html" target="_blank">Background</a></li>
+                <li><a href="certifications.html" target="_blank">Certifications</a></li>
+                <li><a href="projects.html" target="_blank">Projects</a></li>
+                <li><a href="CONNNN.HTML">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Certifications Section -->
+        <section class="certificationsSection">
+            <h2>My Certifications</h2>
+            <div class="certificates">
+                <div class="certificate">
+                    <img src="certificate1.png" alt="Certificate 1">
+                    <h3>Certification Title 1</h3>
+                    <p>Institution Name</p>
+                </div>
+                <div class="certificate">
+                    <img src="certificate2.png" alt="Certificate 2">
+                    <h3>Certification Title 2</h3>
+                    <p>Institution Name</p>
+                </div>
+                <div class="certificate">
+                    <img src="lgc.jpg" alt="Associate Degree from LaGuardia Community College">
+                    <h3>ASSOCIATE DEGREE</h3>
+                    <p>LAGAURDIA COMMUNITY COLLEGE</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Certifications Section -->
+        <section class="certificationsSection">
+            <h2>Other Certifications</h2>
+            <div class="certificates">
+                <div class="certificate">
+                    <img src="lgc.jpg" alt="Certificate 3">
+                    <h3>Certification Title 3</h3>
+                    <p>Institution Name</p>
+                </div>
+                <div class="certificate">
+                    <img src="lgc.jpg" alt="Certificate 4">
+                    <h3>Certification Title 4</h3>
+                    <p>Institution Name</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Footer Navigation Links -->
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="background.html">Background</a></li>
+                    <li><a href="certificate.html">Certifications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="CONNNN.HTML">Contact Me</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons -->
+            
+            <div class="footer-social">
+                <!-- Replace YOUR_LINKEDIN / YOUR_FACEBOOK / YOUR_INSTAGRAM with your actual profile links -->
+                <a href="https:/www.linkedin.com/in/niroj777/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="linkedin"></i>
+                </a>
+                <a href="https//www.facebook.com/share/19n6Y8SxeU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/neeroz.7" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- Footer Rights -->
+            <div class="footer-rights">
+                Niroj Koirala | All rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navbar Scroll Effect and Back to Top Button -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Back to Top Button Visibility
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Back to Top Button Click Event
+        document.getElementById('backToTop').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Certificate Hover Animation (Optional: More Enhancements)
+        document.addEventListener('DOMContentLoaded', () => {
+            const certificates = document.querySelectorAll('.certificate');
+
+            certificates.forEach(certificate => {
+                certificate.addEventListener('mouseover', () => {
+                    certificate.style.transform = 'scale(1.05)';
+                    certificate.style.boxShadow = '0px 0px 25px 0px rgba(26, 188, 156, 0.7)';
+                });
+
+                certificate.addEventListener('mouseout', () => {
+                    certificate.style.transform = 'scale(1)';
+                    certificate.style.boxShadow = '0px 0px 15px 0px rgba(0, 0, 0, 0.3)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
