@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Background - Niroj Koirala</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* ================= GLOBAL RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Roboto',sans-serif;
+background:linear-gradient(-45deg,#0b0d2b,#1b1f3b,#2a2950,#1b1f3b);
+background-size:400% 400%;
+animation:gradientShift 15s ease infinite;
+color:#f0f0f0;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+@keyframes gradientShift{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ================= NAVBAR ================= */
+.nav{
+position:fixed;
+top:0;left:0;width:100%;
+height:90px;
+background:rgba(20,25,40,0.95);
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+backdrop-filter:blur(5px);
+z-index:999;
+}
+.nav a{
+text-decoration:none;
+color:#e0ffff;
+font-weight:700;
+font-size:1.25rem;
+text-transform:uppercase;
+letter-spacing:1px;
+position:relative;
+transition:all .4s ease;
+}
+.nav a::after{
+content:"";
+position:absolute;
+left:0;bottom:-6px;
+width:100%;height:2px;
+background:linear-gradient(90deg,#00ffff,#00eaff);
+opacity:0;transition:.4s ease;
+box-shadow:0 0 10px #00ffff;
+}
+.nav a:hover{
+color:#ffffff;
+text-shadow:0 0 10px #00ffff,0 0 20px #00ffff,0 0 30px #00eaff;
+transform:scale(1.08);
+}
+.nav a:hover::after{
+opacity:1;
+}
+
+/* ================= CONTAINER ================= */
+.container{
+padding-top:140px;
+max-width:1300px;
+margin:auto;
+}
+
+/* ================= TIMELINE ================= */
+.timeline{
+position:relative;
+margin:60px auto;
+padding:40px 0;
+}
+.timeline::after{
+content:"";
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+width:8px;
+background:linear-gradient(180deg,#00ffff,#00eaff,#00ffff);
+box-shadow:0 0 25px #00ffff,0 0 45px rgba(0,255,255,0.5);
+border-radius:5px;
+top:0;bottom:0;
+animation:glowFlow 6s linear infinite;
+}
+@keyframes glowFlow{
+0%{filter:drop-shadow(0 0 5px #00ffff);}
+50%{filter:drop-shadow(0 0 20px #00ffff);}
+100%{filter:drop-shadow(0 0 5px #00ffff);}
+}
+
+.timeline-container{
+position:relative;
+width:50%;
+padding:30px 40px;
+background:rgba(25,30,55,0.95);
+border:1px solid #00ffff;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+margin:40px 0;
+transition:all .4s ease;
+}
+.timeline-container:hover{
+transform:translateY(-8px)scale(1.03);
+box-shadow:0 0 40px #00ffff,0 0 70px rgba(0,255,255,0.5);
+}
+.timeline-container.left{left:0;}
+.timeline-container.right{left:50%;}
+.timeline-container::before{
+content:"";
+position:absolute;
+width:26px;height:26px;
+border-radius:50%;
+background:radial-gradient(circle,#00ffff 40%,#ffffff 90%);
+box-shadow:0 0 30px #00ffff,0 0 60px rgba(0,255,255,0.6);
+top:30px;
+z-index:1;
+animation:pulse 2s infinite;
+}
+.timeline-container.left::before{right:-14px;}
+.timeline-container.right::before{left:-14px;}
+@keyframes pulse{
+0%{transform:scale(0.9);opacity:0.8;}
+50%{transform:scale(1.2);opacity:1;}
+100%{transform:scale(0.9);opacity:0.8;}
+}
+
+/* ================= TIMELINE CONTENT ================= */
+.timeline-container .content h2{
+font-family:'Montserrat',sans-serif;
+font-size:1.8rem;
+margin-bottom:15px;
+color:#00ffff;
+text-shadow:0 0 10px #00ffff,0 0 25px #00eaff;
+position:relative;
+transition:.4s;
+}
+.timeline-container .content h2::after{
+content:"";
+position:absolute;
+left:0;bottom:-6px;
+width:0;height:3px;
+background:linear-gradient(90deg,#00ffff,#00eaff);
+box-shadow:0 0 20px #00ffff;
+transition:width .4s ease;
+}
+.timeline-container .content:hover h2::after{
+width:100%;
+}
+.timeline-container .content p{
+font-size:1.05rem;
+line-height:1.7;
+color:#e8ffff;
+}
+
+/* ================= FOOTER ================= */
+footer{
+margin-top:60px;
+padding:30px;
+background:linear-gradient(135deg,#0b0d2b,#1b1f3b,#2a2950);
+text-align:center;
+border-top:2px solid #00ffff;
+color:#d0fafa;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+footer nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+gap:30px;
+margin-bottom:15px;
+}
+footer nav ul li a{
+color:#00ffff;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+footer nav ul li a:hover{
+color:#ffffff;
+text-shadow:0 0 10px #00ffff,0 0 25px #00eaff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+.timeline::after{left:8px;}
+.timeline-container{width:100%;padding-left:60px;}
+.timeline-container.left,.timeline-container.right{left:0;}
+.timeline-container::before{left:15px;}
+.nav{flex-wrap:wrap;height:auto;padding:20px 10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="tech.html">Tech Projects</a>
+  <a href="background.html">Background</a>
+  <a href="certificate.html">Certificate/license</a>
+  <a href="projects.html">other Projects</a>
+  <a href="CONNNN.HTML">Contact Me</a>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="container">
+  <h1 style="text-align:center;font-family:'Montserrat',sans-serif;
+      color:#00ffff;text-shadow:0 0 20px #00ffff,0 0 40px #00eaff;
+      margin-bottom:50px;font-size:2.3rem;">
+      Background
+  </h1>
+
+  <div class="timeline">
+
+    <div class="timeline-container left">
+      <div class="content">
+        <h2>Early Life, Education & Academic Journey</h2>
+        <p>
+          Born and raised in Nepal, I developed a fascination for how technology can transform lives.
+          I graduated from <strong>LaGuardia Community College</strong> with honors and a <strong>GPA of 3.89</strong>,
+          before transferring to <strong>York College (CUNY)</strong>, where I earned my
+          <strong>Bachelor’s Degree in Computer Science</strong> with a <strong>Minor in Business Administration</strong>.
+          I was awarded the <strong>NSF Scholarship</strong> and achieved multiple academic accolades for excellence and innovation.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="content">
+        <h2>TIQC Internship</h2>
+        <p>
+          During my internship at TIQC, I worked as a <strong>Data Intern</strong> and <strong>Software Engineering Intern</strong>.
+          My tasks included auditing webpages for performance, enhancing front-end efficiency, and collaborating on backend logic improvements.
+          The experience sharpened my problem-solving, teamwork, and analytical thinking.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="content">
+        <h2>IT Support at York College Library</h2>
+        <p>
+          As an <strong>IT Support Technician & Library Mentor</strong>, I assisted students and faculty with hardware and software troubleshooting,
+          managed Excel-based inventory tracking, and ensured efficient tech support operations across library systems.
+          This role strengthened my leadership, patience, and technical versatility.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="content">
+        <h2>CIRE Project & IEEE Publication</h2>
+        <p>
+          As the <strong>Lead Author</strong> of the Smart Traffic Light Control system research, I received a
+          <strong>$6,000 CUNY Grant</strong> and presented the project at <strong>IEEE SUSTECE (California)</strong> and
+          <strong>ERN STEM (Atlanta)</strong>. The project was published in <strong>IEEE Proceedings (2024)</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="content">
+        <h2>Takeo Data Engineering Bootcamp</h2>
+        <p>
+          I completed a <strong>7-month intensive Data Engineering program</strong> where I trained on
+          <strong>Python, SQL, AWS, Azure, Kafka, Databricks, Snowflake, and Airflow</strong>.
+          This experience refined my cloud data architecture and pipeline development expertise.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-container right">
+      <div class="content">
+        <h2>Future Aspirations</h2>
+        <p>
+          I aim to contribute to the competitive tech industry by applying data-driven innovation that benefits real people.
+          I plan to continue my academic journey through a <strong>Master’s and eventually a Ph.D.</strong>,
+          focusing on impactful data systems and smart automation.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-container left">
+      <div class="content">
+        <h2>Personal Interests</h2>
+        <p>
+          Beyond academics, I enjoy <strong>soccer</strong>, <strong>chess</strong>, and exploring <strong>new technologies</strong>.
+          I love mentoring peers, analyzing data trends, and staying informed about global innovation.
+          My hobbies reflect my curiosity, creativity, and persistence.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tech.html">Tech Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="certificate.html">Certificate/License</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="CONNNN.HTML">Contact Me</a></li>
+    </ul>
+  </nav>
+  <p>© 2022 Niroj Koirala — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

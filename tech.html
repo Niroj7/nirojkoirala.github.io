@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tech Projects | Niroj Koirala</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Roboto',sans-serif;
+background:linear-gradient(-45deg,#0b0d2b,#1b1f3b,#2a2950,#1b1f3b);
+background-size:400% 400%;
+animation:gradientShift 15s ease infinite;
+color:#e0ffff;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+@keyframes gradientShift{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+.nav{
+position:fixed;top:0;left:0;width:100%;
+height:90px;background:rgba(20,25,40,0.95);
+display:flex;justify-content:center;align-items:center;
+gap:40px;box-shadow:0 0 25px rgba(0,255,255,0.3);
+backdrop-filter:blur(5px);z-index:999;
+}
+.nav a{
+text-decoration:none;color:#e0ffff;font-weight:700;
+font-size:1.25rem;text-transform:uppercase;
+font-family:'Montserrat',sans-serif;position:relative;
+transition:all .4s ease;
+}
+.nav a::after{
+content:"";position:absolute;left:0;bottom:-6px;
+width:100%;height:2px;background:linear-gradient(90deg,#00ffff,#00eaff);
+opacity:0;transition:.4s ease;box-shadow:0 0 10px #00ffff;
+}
+.nav a:hover{
+color:#ffffff;text-shadow:0 0 10px #00ffff,0 0 25px #00eaff;
+transform:scale(1.1);
+}
+.nav a:hover::after{opacity:1;}
+
+/* MAIN */
+.container{
+padding-top:140px;
+max-width:1650px;
+margin:auto;
+text-align:center;
+}
+
+/* TITLE */
+h1{
+font-family:'Montserrat',sans-serif;
+font-size:3.6rem;
+background:linear-gradient(90deg,#00ffaa,#00ffff,#00eaff);
+-webkit-background-clip:text;color:transparent;
+text-shadow:0 0 20px #00ffff,0 0 40px #00eaff;
+margin-bottom:60px;
+animation:titleGlow 4s ease-in-out infinite alternate;
+}
+@keyframes titleGlow{
+0%{text-shadow:0 0 20px #00ffff,0 0 40px #00eaff;}
+100%{text-shadow:0 0 40px #00ffaa,0 0 70px #00ffff;}
+}
+
+/* BOXES */
+.row{
+display:flex;
+justify-content:space-between;
+gap:70px;
+margin-bottom:60px;
+flex-wrap:wrap;
+padding:0 15px;
+}
+.section-box{
+flex:1;
+background:rgba(25,30,55,0.9);
+border:1px solid #00ffff;
+border-radius:12px;
+padding:45px 35px;
+min-width:420px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+transition:.4s ease;
+}
+.section-box:hover{
+transform:translateY(-5px);
+box-shadow:0 0 45px #00ffff,0 0 70px rgba(0,255,255,0.5);
+}
+.section-box h2{
+font-family:'Montserrat',sans-serif;
+font-size:2.3rem;
+color:#00ffff;
+text-shadow:0 0 10px #00eaff;
+margin-bottom:15px;
+}
+.section-box p{
+font-size:1.3rem;
+line-height:1.85;
+color:#e6f9f8;
+}
+
+/* IEEE LOGO */
+.ieee-logo{
+width:70px;
+height:auto;
+filter:drop-shadow(0 0 10px #00ffff);
+transition:transform .3s ease,filter .3s ease;
+cursor:pointer;
+}
+.ieee-logo:hover{
+transform:scale(1.1);
+filter:drop-shadow(0 0 25px #00eaff);
+}
+
+/* ARROWS */
+.connector{
+width:4px;
+height:80px;
+background:linear-gradient(#00ffaa,#00ffff,#00ffaa);
+margin:30px auto;
+border-radius:3px;
+position:relative;
+animation:glowPulse 3s ease-in-out infinite alternate;
+}
+.connector::after{
+content:"▼";
+position:absolute;
+left:50%;
+bottom:-18px;
+transform:translateX(-50%);
+color:#00ffff;
+text-shadow:0 0 10px #00ffcc;
+font-size:1.5em;
+}
+@keyframes glowPulse{
+0%{box-shadow:0 0 10px #00ffaa;}
+100%{box-shadow:0 0 30px #00ffff;}
+}
+
+/* DOUBLE BORDER SECTION */
+.double-border{
+background:rgba(26,37,47,.9);
+border:3px double #00ffaa;
+border-radius:15px;
+padding:55px;
+box-shadow:0 0 40px rgba(0,255,204,.3);
+transition:.4s;
+}
+.double-border:hover{
+transform:scale(1.01);
+box-shadow:0 0 60px #00ffaa,0 0 80px rgba(0,255,204,.5);
+}
+
+/* LINKS */
+ul.links{list-style:none;padding:0;margin:20px 0;}
+ul.links li{margin:12px 0;}
+ul.links a{
+color:#00ffcc;text-decoration:none;font-weight:bold;
+transition:.3s;font-size:1.25em;
+}
+ul.links a:hover{
+color:#00ffaa;text-shadow:0 0 10px #00ffaa;
+}
+
+/* POSTER */
+.poster{
+margin:40px auto;
+max-width:950px;
+}
+.poster img{
+width:100%;
+border-radius:14px;
+box-shadow:0 0 35px rgba(0,255,204,.4);
+transition:transform .4s ease,box-shadow .4s ease;
+}
+.poster img:hover{
+transform:scale(1.03);
+box-shadow:0 0 60px #00ffaa,0 0 100px rgba(0,255,204,.6);
+}
+
+/* TWO SMALL IMAGES */
+.image-row{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+.image-row img{
+width:46%;
+max-width:450px;
+border-radius:10px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+transition:transform .4s ease,box-shadow .4s ease;
+}
+.image-row img:hover{
+transform:scale(1.05);
+box-shadow:0 0 50px #00ffff,0 0 80px rgba(0,255,255,0.5);
+}
+
+/* DIVIDER */
+.divider{
+width:100%;
+height:4px;
+background:linear-gradient(90deg,#00ffaa,#00ffff,#00eaff);
+box-shadow:0 0 30px #00ffaa,0 0 60px #00ffff;
+border-radius:2px;
+margin:90px auto;
+animation:glowPulse 3s infinite alternate;
+}
+
+/* OTHER PROJECTS */
+.other-projects h2{
+font-size:2.4rem;
+margin-bottom:30px;
+color:#00ffff;
+text-shadow:0 0 15px #00ffaa,0 0 30px #00eaff;
+}
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+padding:0 40px;
+}
+.project-card-small{
+background:rgba(26,37,47,.9);
+border:1px solid #00ffff;
+border-radius:12px;
+padding:30px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+transition:transform .4s ease,box-shadow .4s ease;
+}
+.project-card-small:hover{
+transform:translateY(-6px)scale(1.02);
+box-shadow:0 0 45px #00ffaa,0 0 80px rgba(0,255,255,0.5);
+}
+.project-card-small h3{
+font-family:'Montserrat',sans-serif;
+font-size:1.7rem;
+color:#00ffff;
+margin-bottom:12px;
+text-shadow:0 0 10px #00eaff;
+}
+.project-card-small p{
+font-size:1.2rem;
+color:#e8ffff;
+line-height:1.75;
+}
+
+/* FOOTER */
+footer{
+margin-top:70px;
+padding:40px;
+background:linear-gradient(135deg,#0b0d2b,#1b1f3b,#2a2950);
+text-align:center;
+border-top:2px solid #00ffff;
+color:#d0fafa;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+footer nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+gap:30px;
+margin-bottom:15px;
+flex-wrap:wrap;
+}
+footer nav ul li a{
+color:#00ffff;
+text-decoration:none;
+font-weight:600;
+font-size:1.1rem;
+transition:.3s;
+}
+footer nav ul li a:hover{
+color:#ffffff;
+text-shadow:0 0 10px #00ffff,0 0 25px #00eaff;
+}
+
+/* SCROLL TO TOP BUTTON */
+#backToTop{
+position:fixed;
+bottom:40px;
+right:40px;
+background:#00ffaa;
+color:#000;
+border:none;
+padding:15px 18px;
+border-radius:50%;
+font-size:1.4rem;
+cursor:pointer;
+box-shadow:0 0 25px #00ffaa;
+transition:all .3s ease;
+z-index:999;
+}
+#backToTop:hover{
+background:#00ffff;
+box-shadow:0 0 35px #00eaff;
+transform:scale(1.15);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="tech.html">Tech Projects</a>
+  <a href="background.html">Background</a>
+  <a href="certificate.html">Certificate/license</a>
+  <a href="projects.html">Other Projects</a>
+  <a href="CONNNN.HTML">Contact Me</a>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+  <h1>Smart Traffic Light Control with Emergency Vehicle Detection and Boom Barriers Using Arduino</h1>
+
+  <!-- MOTIVATION + SYSTEM -->
+  <div class="row">
+    <div class="section-box">
+      <h2>🎯 Motivation</h2>
+      <p>Over 40% of U.S. traffic accidents occur at intersections. Inspired by increasing fatalities in NYC, this IoT-based project introduces a smart traffic control system to prioritize emergency vehicles and reduce congestion.</p>
+    </div>
+    <div class="section-box">
+      <h2>⚙️ System Overview</h2>
+      <p>The system uses dual Arduino controllers connected via XBEE protocol for wireless synchronization. Sensors detect sirens and density, dynamically adjusting lights. Boom barriers open automatically, with Bluetooth override support.</p>
+    </div>
+  </div>
+
+  <!-- ARROW -->
+  <div class="connector"></div>
+
+  <!-- ACHIEVEMENT -->
+  <div class="section-box">
+    <h2>
+      🏆 Achievements & Recognition
+      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11025771&isnumber=11025534" target="_blank">
+        <img src="IEEEIMG.png" alt="IEEE Logo" class="ieee-logo">
+      </a>
+    </h2>
+    <p>As Lead Author, this $6,000 CUNY-funded research was presented at IEEE SUSTECE (California), ERN STEM (Atlanta), and multiple CUNY Research Symposiums. It received awards for Innovation and Technical Implementation and was later published in IEEE Proceedings (2024).</p>
+  </div>
+
+  <!-- ARROW -->
+  <div class="connector"></div>
+
+  <!-- RESEARCH -->
+  <div class="double-border">
+    <h2>🔗 Research & Demonstration</h2>
+    <ul class="links">
+      <li><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11025771&isnumber=11025534" target="_blank">📘 IEEE Published Paper</a></li>
+      <li><a href="code.ino" download>💻 Arduino Source Code</a></li>
+    </ul>
+
+    <div class="poster">
+      <img src="poster .JPG" alt="Smart Traffic System Poster">
+    </div>
+
+    <div class="image-row">
+      <img src="IMG_8433.jpeg" alt="Demo Image 1">
+      <img src="IMG_8435 (1).jpeg" alt="Demo Image 2">
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- OTHER PROJECTS -->
+  <div class="other-projects">
+    <h2>💼 Other Projects</h2>
+    <div class="project-grid">
+      <div class="project-card-small">
+        <h3>📊 Sales Data Dashboard</h3>
+        <p>Developed an interactive Power BI dashboard to analyze sales, profit margins, and customer trends using CSV datasets. Added DAX measures for year-over-year growth visualization.</p>
+      </div>
+      <div class="project-card-small">
+        <h3>💾 ETL Data Pipeline (Python + SQL)</h3>
+        <p>Built an end-to-end ETL process using Python and SQL. Extracted CSVs, transformed using Pandas, and loaded into PostgreSQL for analytics reporting.</p>
+      </div>
+      <div class="project-card-small">
+        <h3>💼 Business Expense Tracker</h3>
+        <p>Created a Python and Excel-based tool to track daily expenses, generate monthly reports, and visualize spending using Matplotlib.</p>
+      </div>
+      <div class="project-card-small">
+        <h3>🌦 Weather Forecast App</h3>
+        <p>Built a real-time web app using OpenWeather API, HTML, CSS, and JavaScript to display 7-day forecasts with location-based updates.</p>
+      </div>
+      <div class="project-card-small">
+        <h3>🧾 Student Grade Analyzer</h3>
+        <p>Python-based analyzer using Pandas and Matplotlib to compute grade distributions and visualize academic performance trends.</p>
+      </div>
+      <div class="project-card-small">
+        <h3>🕹 Mini Arcade Game</h3>
+        <p>Developed a JavaScript Canvas mini game with scoring, collisions, and dynamic difficulty scaling — introducing core game physics.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCROLL TO TOP -->
+<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<!-- FOOTER -->
+<footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tech.html">Tech Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="certificate.html">Certificate/license</a></li>
+      <li><a href="projects.html">Other Projects</a></li>
+      <li><a href="CONNNN.HTML">Contact Me</a></li>
+    </ul>
+  </nav>
+  <p>© 2025 Niroj Koirala — All Rights Reserved</p>
+</footer>
+
+<script>
+const topBtn=document.getElementById("backToTop");
+window.addEventListener("scroll",()=>{topBtn.style.display=window.scrollY>300?"block":"none";});
+topBtn.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+
+</body>
+</html>

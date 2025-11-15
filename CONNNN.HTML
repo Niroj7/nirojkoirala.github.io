@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Me - Niroj Koirala</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Roboto',sans-serif;
+background:linear-gradient(-45deg,#0b0d2b,#1b1f3b,#2a2950,#1b1f3b);
+background-size:400% 400%;
+animation:gradientShift 15s ease infinite;
+color:#e0ffff;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+@keyframes gradientShift{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
+.nav{
+position:fixed;top:0;left:0;width:100%;
+height:90px;background:rgba(20,25,40,0.95);
+display:flex;justify-content:center;align-items:center;gap:40px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+backdrop-filter:blur(5px);z-index:999;
+}
+.nav a{
+text-decoration:none;color:#e0ffff;font-weight:700;font-size:1.25rem;
+text-transform:uppercase;letter-spacing:1px;position:relative;transition:all .4s ease;
+}
+.nav a::after{
+content:"";position:absolute;left:0;bottom:-6px;width:100%;height:2px;
+background:linear-gradient(90deg,#00ffff,#00eaff);opacity:0;transition:.4s ease;
+box-shadow:0 0 10px #00ffff;
+}
+.nav a:hover{
+color:#ffffff;text-shadow:0 0 10px #00ffff,0 0 25px #00ffff,0 0 30px #00eaff;
+transform:scale(1.1);
+}
+.nav a:hover::after{opacity:1}
+
+/* MAIN CONTENT */
+.container{
+margin-top:170px;
+max-width:700px; /* made form wider */
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+background:rgba(25,30,55,0.85);
+border:1px solid #00ffff;
+border-radius:20px;
+padding:70px 60px; /* more padding */
+box-shadow:0 0 40px rgba(0,255,255,0.3);
+animation:fadeInUp 1s ease-in-out;
+position:relative;
+margin-bottom:130px;
+}
+@keyframes fadeInUp{
+0%{opacity:0;transform:translateY(30px);}
+100%{opacity:1;transform:translateY(0);}
+}
+.container:hover{
+box-shadow:0 0 60px rgba(0,255,255,0.6);
+}
+
+/* HEADING */
+.container h1{
+font-family:'Montserrat',sans-serif;
+font-size:3rem;
+margin-bottom:10px;
+color:#00ffff;
+text-shadow:0 0 25px #00ffff,0 0 45px #00eaff;
+}
+
+/* SUBTEXT */
+.subtext{
+font-size:1.1rem;
+color:#00ffff;
+margin-bottom:30px;
+animation:glowText 2s ease-in-out infinite alternate;
+text-shadow:0 0 15px #00ffff,0 0 35px #00eaff;
+}
+@keyframes glowText{
+0%{opacity:0.7;letter-spacing:1px;}
+100%{opacity:1;letter-spacing:2px;}
+}
+
+/* CONTACT INFO */
+.contact-info{
+margin-bottom:25px;
+font-size:1.1rem;
+line-height:1.8;
+color:#dff;
+}
+.contact-info strong{
+color:#00ffff;
+}
+
+/* FORM */
+form label{
+display:block;
+text-align:left;
+font-weight:600;
+color:#00ffff;
+margin-bottom:6px;
+margin-top:18px;
+font-family:'Montserrat',sans-serif;
+}
+form input, form textarea{
+width:100%;
+padding:15px; /* larger input fields */
+border:none;
+border-radius:10px;
+background:#151832;
+color:#e0ffff;
+font-size:1.1rem;
+transition:all .3s ease;
+box-shadow:inset 0 0 10px rgba(0,255,255,0.2);
+}
+form input:focus, form textarea:focus{
+outline:none;
+background:#1c1f40;
+box-shadow:0 0 15px #00ffff;
+}
+form input:hover, form textarea:hover{
+transform:scale(1.02);
+}
+
+/* BUTTON */
+button{
+width:100%;
+margin-top:25px;
+padding:16px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#00eaff,#00ffff);
+color:#000;
+font-size:1.25rem;
+font-weight:700;
+cursor:pointer;
+transition:all .4s ease;
+box-shadow:0 0 25px #00ffff;
+}
+button:hover{
+background:linear-gradient(90deg,#00ffff,#00eaff);
+box-shadow:0 0 45px #00ffff,0 0 70px rgba(0,255,255,0.6);
+transform:scale(1.05);
+}
+
+/* SOCIAL LINKS */
+.social{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:35px;
+}
+.social a{
+color:#00ffff;
+font-size:1.8rem;
+transition:all .4s ease;
+}
+.social a:hover{
+color:#fff;
+text-shadow:0 0 15px #00ffff,0 0 35px #00eaff;
+transform:scale(1.2);
+}
+
+/* SIDE GLOW BAR */
+.side-glow{
+position:absolute;
+left:0;top:0;
+width:5px;height:100%;
+background:linear-gradient(180deg,#00ffff,#00eaff);
+box-shadow:0 0 25px #00ffff;
+animation:flow 3s linear infinite;
+border-radius:0 5px 5px 0;
+}
+@keyframes flow{
+0%{filter:brightness(0.8);}
+50%{filter:brightness(1.4);}
+100%{filter:brightness(0.8);}
+}
+
+/* MOVING TEXT */
+.moving-text{
+position:fixed;
+top:100px;
+width:100%;
+text-align:center;
+font-size:1.1rem;
+font-weight:600;
+color:#00ffff;
+text-shadow:0 0 15px #00ffff,0 0 25px #00eaff;
+animation:moveGlow 10s linear infinite;
+z-index:1;
+}
+@keyframes moveGlow{
+0%{opacity:0.7;letter-spacing:1px;}
+50%{opacity:1;letter-spacing:3px;}
+100%{opacity:0.7;letter-spacing:1px;}
+}
+
+/* RIGHT BUTTON */
+.right-button{
+position:fixed;
+top:50%;
+right:30px;
+transform:translateY(-50%);
+background:linear-gradient(90deg,#00eaff,#00ffff);
+color:#000;
+padding:15px 22px;
+border-radius:10px;
+text-decoration:none;
+font-weight:700;
+font-family:'Montserrat',sans-serif;
+box-shadow:0 0 25px #00ffff;
+transition:all .4s ease;
+animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+0%,100%{transform:translateY(-50%) translateX(0);}
+50%{transform:translateY(-55%) translateX(0);}
+}
+.right-button:hover{
+background:linear-gradient(90deg,#00ffff,#00eaff);
+box-shadow:0 0 35px #00ffff,0 0 55px rgba(0,255,255,0.6);
+transform:translateY(-50%) scale(1.1);
+color:#000;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop{
+position:fixed;
+bottom:30px;right:30px;
+width:55px;height:55px;
+border-radius:50%;
+background:rgba(0,255,255,0.9);
+color:#000;
+border:none;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 25px #00ffff;
+opacity:0;visibility:hidden;
+transition:.3s;
+z-index:1001;
+}
+#backToTop.show{opacity:1;visibility:visible}
+#backToTop:hover{transform:scale(1.1)}
+
+/* FOOTER */
+footer{
+margin-top:0;
+padding:40px 20px;
+background:linear-gradient(135deg,#0b0d2b,#1b1f3b,#2a2950);
+text-align:center;
+border-top:2px solid #00ffff;
+color:#d0fafa;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+position:relative;
+z-index:1;
+}
+footer nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+gap:30px;
+margin-bottom:15px;
+flex-wrap:wrap;
+}
+footer nav ul li a{
+color:#00ffff;text-decoration:none;font-weight:600;transition:.3s;
+}
+footer nav ul li a:hover{
+color:#ffffff;text-shadow:0 0 10px #00ffff,0 0 25px #00eaff;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="tech.html">Tech Projects</a>
+  <a href="background.html">Background</a>
+  <a href="certificate.html">Certificate/License</a>
+  <a href="projects.html">Other Projects</a>
+  <a href="CONNNN.HTML">Contact Me</a>
+</div>
+
+<!-- MOVING TEXT -->
+<div class="moving-text">✨ Typically respond within 1–2 business days ✨</div>
+
+<!-- CONTACT FORM -->
+<div class="container">
+  <div class="side-glow"></div>
+  <h1>Contact Me</h1>
+  <p class="subtext">📩 Shoot me a text for a quicker response!</p>
+
+  <div class="contact-info">
+    <p><strong>Name:</strong> Niroj Koirala</p>
+    <p><strong>Email:</strong> nirojkoirala7@gmail.com</p>
+  </div>
+
+  <form id="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="social">
+    <a href="" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.facebook.com/share/19n6Y8SxeU/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/neeroz.7" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+</div>
+
+<!-- RIGHT BUTTON -->
+<a href="tech.html" class="right-button">✨ Want to see more of my work? Click here ✨</a>
+
+<!-- FOOTER -->
+<footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tech.html">Tech Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="certificate.html">Certificates/License</a></li>
+      <li><a href="projects.html">Other Projects</a></li>
+      <li><a href="CONNNN.HTML">Contact Me</a></li>
+    </ul>
+  </nav>
+  <p>© 2022 Niroj Koirala — All Rights Reserved</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" title="Back to Top">↑</button>
+<script>
+const backToTop=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{if(window.scrollY>300){backToTop.classList.add('show');}else{backToTop.classList.remove('show');}});
+backToTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+
+</body>
+</html>
