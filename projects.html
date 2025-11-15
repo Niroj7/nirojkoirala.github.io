@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Other Projects - Niroj Koirala</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Roboto',sans-serif;
+background:linear-gradient(-45deg,#0b0d2b,#1b1f3b,#2a2950,#1b1f3b);
+background-size:400% 400%;
+animation:gradientShift 15s ease infinite;
+color:#e0ffff;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+@keyframes gradientShift{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
+.nav{
+position:fixed;top:0;left:0;width:100%;
+height:90px;background:rgba(20,25,40,0.95);
+display:flex;justify-content:center;align-items:center;gap:40px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+backdrop-filter:blur(5px);z-index:999;
+}
+.nav a{
+text-decoration:none;color:#e0ffff;font-weight:700;font-size:1.25rem;
+text-transform:uppercase;letter-spacing:1px;position:relative;transition:all .4s ease;
+}
+.nav a::after{
+content:"";position:absolute;left:0;bottom:-6px;width:100%;height:2px;
+background:linear-gradient(90deg,#00ffff,#00eaff);opacity:0;transition:.4s ease;
+box-shadow:0 0 10px #00ffff;
+}
+.nav a:hover{
+color:#ffffff;text-shadow:0 0 10px #00ffff,0 0 25px #00ffff,0 0 30px #00eaff;
+transform:scale(1.1);
+}
+.nav a:hover::after{opacity:1}
+
+/* MAIN SECTION */
+.container{
+padding-top:130px;
+max-width:1300px;
+margin:auto;
+text-align:center;
+}
+
+/* HEADING */
+.container h1{
+font-family:'Montserrat',sans-serif;
+font-size:2.6rem;
+color:#00ffff;
+text-shadow:0 0 20px #00ffff,0 0 40px #00eaff;
+margin-bottom:40px;
+}
+
+/* PROJECT BOXES */
+.projects{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+padding:0 20px;
+}
+.project{
+background:rgba(25,30,55,0.9);
+border:1px solid #00ffff;
+border-radius:20px;
+padding:30px 35px;
+width:380px;
+min-height:320px;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+text-align:left;
+transition:all .4s ease;
+}
+.project:hover{
+transform:translateY(-10px)scale(1.05);
+box-shadow:0 0 50px #00ffff,0 0 90px rgba(0,255,255,0.6);
+}
+.project h3{
+font-family:'Montserrat',sans-serif;
+font-size:1.6rem;
+color:#00ffff;
+margin-bottom:10px;
+text-shadow:0 0 10px #00ffff,0 0 20px #00eaff;
+}
+.project p{
+font-size:1.05rem;
+line-height:1.7;
+color:#e8ffff;
+margin-bottom:15px;
+}
+.project a{
+display:inline-block;
+margin-top:10px;
+color:#00ffff;
+font-weight:600;
+text-decoration:none;
+border:1px solid #00ffff;
+padding:8px 18px;
+border-radius:8px;
+transition:all .3s ease;
+}
+.project a:hover{
+background:linear-gradient(90deg,#00eaff,#00ffff);
+color:#000;
+box-shadow:0 0 20px #00ffff;
+}
+
+/* SEPARATOR */
+.separator{
+width:85%;
+height:3px;
+margin:80px auto;
+background:linear-gradient(90deg,rgba(0,255,255,0),#00ffff,rgba(0,255,255,0));
+box-shadow:0 0 25px #00ffff;
+animation:linePulse 3s ease-in-out infinite alternate;
+}
+@keyframes linePulse{
+0%{opacity:0.8;box-shadow:0 0 10px #00ffff;}
+100%{opacity:1;box-shadow:0 0 40px #00eaff;}
+}
+
+/* FOOTER */
+footer{
+margin-top:70px;
+padding:30px;
+background:linear-gradient(135deg,#0b0d2b,#1b1f3b,#2a2950);
+text-align:center;
+border-top:2px solid #00ffff;
+color:#d0fafa;
+box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+footer nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+gap:30px;
+margin-bottom:15px;
+}
+footer nav ul li a{
+color:#00ffff;text-decoration:none;font-weight:600;transition:.3s;
+}
+footer nav ul li a:hover{
+color:#ffffff;text-shadow:0 0 10px #00ffff,0 0 25px #00eaff;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop{
+position:fixed;
+bottom:30px;right:30px;
+width:55px;height:55px;
+border-radius:50%;
+background:rgba(0,255,255,0.9);
+color:#000;
+border:none;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 25px #00ffff;
+opacity:0;visibility:hidden;
+transition:.3s;
+z-index:1001;
+}
+#backToTop.show{opacity:1;visibility:visible}
+#backToTop:hover{transform:scale(1.1)}
+
+@media(max-width:950px){
+.projects{flex-direction:column;align-items:center;}
+.project{width:90%;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="tech.html">Tech Projects</a>
+  <a href="background.html">Background</a>
+  <a href="certificate.html">Certificate/License</a>
+  <a href="projects.html">Other Projects</a>
+  <a href="CONNNN.HTML">Contact Me</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <h1>Other Projects</h1>
+
+  <div class="projects">
+    <div class="project">
+      <h3>Problems in Mega-Cities</h3>
+      <p>This research highlights major issues in rapidly growing cities—traffic congestion, waste management, housing shortages, and air pollution. It proposes sustainable development strategies and technological solutions to balance growth and livability.</p>
+      <a href="final SSN.docx" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>AI Impact on Jobs</h3>
+      <p>Explores how Artificial Intelligence is transforming the job market by automating processes, reshaping industries, and creating new tech opportunities. Emphasizes upskilling and human-AI collaboration for future workforce readiness.</p>
+      <a href="Nirojfinalsub.docx" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>Research on Electromagnetic Waves</h3>
+      <p>Analyzes the biological and environmental impact of electromagnetic radiation from modern devices. Suggests updated safety standards and public awareness to ensure safe technology use in daily life.</p>
+      <a href="FINAL RESEARCH PAPER..docx" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>Starting a Small Business: The Benefits of a Partnership</h3>
+      <p>This detailed research paper explores the process of starting a small business under a partnership structure. It covers legal formation, funding strategies, marketing, and community benefits. The study emphasizes how shared skills, combined investment, and sustainable practices make partnerships an ideal model for socially responsible entrepreneurship.</p>
+      <a href="Starting a Small Business 2.docx" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="techprojects.html">Tech Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="certificate.html">Certificate/LICENSE</a></li>
+      <li><a href="projects.html">Other Projects</a></li>
+      <li><a href="CONNNN.HTML">Contact Me</a></li>
+    </ul>
+  </nav>
+  <p>© 2022 Niroj Koirala — All Rights Reserved</p>
+</footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Back to Top">↑</button>
+<script>
+const backToTop=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{if(window.scrollY>300){backToTop.classList.add('show');}else{backToTop.classList.remove('show');}});
+backToTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+
+</body>
+</html>
